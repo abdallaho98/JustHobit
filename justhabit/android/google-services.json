@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "612434838485",
+    "firebase_url": "https://justhabit-8869c.firebaseio.com",
+    "project_id": "justhabit-8869c",
+    "storage_bucket": "justhabit-8869c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612434838485:android:aed6a3836e1802ad",
+        "android_client_info": {
+          "package_name": "dz.polydev.justhabit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612434838485-cbi6dp353p2smrbba49b2g45mdnir2lc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dz.polydev.justhabit",
+            "certificate_hash": "bc9971c9c87ae1e763d16645f116949e18e0aea2"
+          }
+        },
+        {
+          "client_id": "612434838485-0m5ntc52pv9vkl032uema9c66lkp1bk8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt93e6M5NdAQlDjMvaERo1qFdDT4WzqnU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612434838485-0m5ntc52pv9vkl032uema9c66lkp1bk8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
