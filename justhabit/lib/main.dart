@@ -2,10 +2,16 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:justhabit/Model/User.dart';
 import 'package:justhabit/widgets/Qst1.dart';
+import 'package:firebase_database/firebase_database.dart';
+
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn _googleSignIn = new GoogleSignIn();
+FirebaseDatabase firebaseDatabase = FirebaseDatabase.instance;
+User userGlobale = new User();
+
 
 void main() =>
     runApp(new MaterialApp(
@@ -56,9 +62,12 @@ class login extends State<Login> {
         idToken: googleSignInAuthentication.idToken,
         accessToken: googleSignInAuthentication.accessToken);
     if(user != null){
+      userGlobale.email = user.email;
+      userGlobale.id = DateTime.now().millisecondsSinceEpoch.toString();
+      firebaseDatabase.reference().child("Users").child(userGlobale.id).set({ "email" : userGlobale.email});
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => new MaterialApp(home: new Qst1())),
+        MaterialPageRoute(builder: (context) => new MaterialApp(home: new Qst1(userGlobale))),
       );
     }
     return user;
