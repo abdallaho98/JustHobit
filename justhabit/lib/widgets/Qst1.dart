@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:justhabit/widgets/Qst2.dart';
 
 class Qst1 extends StatefulWidget{
   @override
@@ -12,6 +13,8 @@ class Qst1 extends StatefulWidget{
 class qst1 extends State<Qst1> {
   @override
   Widget build(BuildContext context) {
+
+
     return new Scaffold(
       appBar: new AppBar(
         title: const Text("JustHobbit"),
@@ -33,17 +36,17 @@ class qst1 extends State<Qst1> {
               new Row(
                 children: <Widget>[
                   new Padding(padding: EdgeInsets.only(left: 8.0)),
-                  new RaisedButton(onPressed: () => debugPrint("Sport")  , color: Colors.blueGrey, child: new Text("Sport"),),
+                  new RaisedButton(onPressed: () => chose("Sport") , color: Colors.blueGrey, child: new Text("Sport"),),
                   new Padding(padding: EdgeInsets.only(left: 8.0)),
-                  new RaisedButton(onPressed: () => debugPrint("Literator")  , color: Colors.blueGrey, child: new Text("Literater"),),
+                  new RaisedButton(onPressed: () => chose("Literator")  , color: Colors.blueGrey, child: new Text("Literater"),),
                 ],
               ),
               new Row(
                 children: <Widget>[
                   new Padding(padding: EdgeInsets.only(left: 8.0)),
-                  new RaisedButton(onPressed: () => debugPrint("Music")  , color: Colors.blueGrey, child: new Text("Music"),),
+                  new RaisedButton(onPressed: () => chose("Music")  , color: Colors.blueGrey, child: new Text("Music"),),
                   new Padding(padding: EdgeInsets.only(left: 8.0)),
-                  new RaisedButton(onPressed: () => debugPrint("Film")  , color: Colors.blueGrey, child: new Text("Film"),),
+                  new RaisedButton(onPressed: () => chose("Film")  , color: Colors.blueGrey, child: new Text("Film"),),
                 ],
               ),
 
@@ -51,6 +54,12 @@ class qst1 extends State<Qst1> {
         ),
       ),
       ),
+    );
+  }
+  void chose(String selected){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => new MaterialApp(home: new qst2(selected))),
     );
   }
 
