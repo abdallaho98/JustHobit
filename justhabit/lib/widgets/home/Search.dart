@@ -43,6 +43,8 @@ class search extends State<Search> {
             child: FirebaseAnimatedList(
               query: data,
               itemBuilder: (_,DataSnapshot snapshot,Animation<double> animation , int index){
+                if(list[index].topic.toLowerCase() != _user.hobit.toLowerCase()){return new Container(height: 0.0,) ;}
+                else{
                 return new Card(
                   color: Colors.black,
                   child: ListTile(
@@ -67,7 +69,7 @@ class search extends State<Search> {
                     ),
                     onTap:() => chose(_user,list[index]),
                   ),
-                );
+                );}
               },
             ))
     );

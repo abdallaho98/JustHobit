@@ -39,6 +39,9 @@ class qst2 extends StatelessWidget {
      backgroundColor: Colors.grey,
       body: new Center(
         child: new Container(
+            decoration: new BoxDecoration(
+              image: new DecorationImage(image: new AssetImage("images/background.PNG"), fit: BoxFit.cover,),
+            ),
           child: new Padding(padding: EdgeInsets.only(left: 24.0,right: 24.0 ,) ,
             child:new Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -50,7 +53,7 @@ class qst2 extends StatelessWidget {
                 new RaisedButton(onPressed: () => chose(op1) ,
                     elevation: 10.0,
                     shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)),
-                    color: const Color(0xFFe79124),
+                    color: const Color(0xFF4348a5),
                     padding: EdgeInsets.only(top: 16.0,bottom: 16.0),
                     child: new Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -65,7 +68,7 @@ class qst2 extends StatelessWidget {
                 new RaisedButton(onPressed: () => chose(op3) ,
                     elevation: 10.0,
                     shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)),
-                    color: const Color(0xFFed1f24),
+                    color: const Color(0xFFdce11f),
                     padding: EdgeInsets.only(top: 16.0,bottom: 16.0),
                     child: new Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +83,7 @@ class qst2 extends StatelessWidget {
                 new RaisedButton(onPressed: () => chose(op4) ,
                     elevation: 10.0,
                     shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)),
-                    color: const Color(0xFF4348a5),
+                    color: const Color(0xFFe79124),
                     padding: EdgeInsets.only(top: 16.0,bottom: 16.0),
                     child: new Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -95,7 +98,7 @@ class qst2 extends StatelessWidget {
                 new RaisedButton(onPressed: () => chose(op2) ,
                     elevation: 10.0,
                     shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)),
-                    color: const Color(0xFFdce11f),
+                    color: const Color(0xFFed1f24),
                     padding: EdgeInsets.only(top: 16.0,bottom: 16.0),
                     child: new Row(
                       mainAxisAlignment: MainAxisAlignment.center,

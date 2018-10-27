@@ -38,17 +38,37 @@ class login extends State<Login> {
               "JustHobit",
               textDirection: TextDirection.ltr,
             )),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Color(0xFFd1d3d4),
         body: new Container(
           child: new Center(
-            child: new FlatButton(
-                onPressed: () => _gSignin(),
-                color: Colors.grey,
-                child: new Text(
-                  "Sign in Google",
-                  textDirection: TextDirection.ltr,
-                  style: new TextStyle(color: Colors.lightGreen),
-                )),
+            child: new Column(
+              children: <Widget>[
+                new Padding(padding: EdgeInsets.only(top: 100.0)),
+                new Image.asset('images/logo.png' , width: 160.0 , height: 202.0,),
+
+                new Padding(padding: EdgeInsets.only(top: 26.0)),
+
+                new FlatButton(
+
+                    onPressed: () => _gSignin(),
+                    color: Colors.red,
+                    child: new Text(
+                      "Sign in with Google",
+                      textDirection: TextDirection.ltr,
+                      style: new TextStyle(color: Colors.white),
+                    )),
+                new Padding(padding: EdgeInsets.only(top: 18.0)),
+                new FlatButton(
+                    onPressed: () => _gSignin(),
+                    color: Colors.blueAccent,
+                    child: new Text(
+                      "Sign in with Facebook",
+                      textDirection: TextDirection.ltr,
+                      style: new TextStyle(color: Colors.white),
+                    )),
+
+              ],
+            )
           ),
         ),
     );

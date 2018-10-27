@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:justhabit/Model/User.dart';
+import 'package:justhabit/widgets/home/MyActivities.dart';
 import 'package:justhabit/widgets/home/Search.dart';
 
 
@@ -25,7 +26,7 @@ class home extends StatelessWidget{
         ),
       ),
       body: new TabBarView( children: [
-        Icon(Icons.directions_car),
+        new MyActivities(member),
         Icon(Icons.directions_transit),
         new Search(member),
         Icon(Icons.directions_bike),

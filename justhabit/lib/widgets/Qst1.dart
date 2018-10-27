@@ -27,7 +27,10 @@ class Qst1 extends StatelessWidget {
      backgroundColor: Colors.black,
       body: new Center(
         child: new Container(
-          child: new Padding(padding: EdgeInsets.only(top: 135.0,left: 24.0,right: 24.0),
+          decoration: new BoxDecoration(
+            image: new DecorationImage(image: new AssetImage("images/background.PNG"), fit: BoxFit.cover,),
+          ),
+          child: new Padding(padding: EdgeInsets.only(top: 70.0,left: 24.0,right: 24.0),
             child:new Column(
               children: <Widget>[
                 new Text(" Just do it!" , style: new TextStyle(color: Colors.white , fontSize: 21.0) ,),

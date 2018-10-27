@@ -58,7 +58,8 @@ flutter:
    - images/open-book.png
    - images/video.png
    - images/musical-note.png
-
+   - images/logo.png
+   - images/background.PNG
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
