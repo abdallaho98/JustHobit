@@ -1,6 +1,6 @@
 # justhabit
 
-wellbeing application
+A new Flutter application.
 
 ## Getting Started
 

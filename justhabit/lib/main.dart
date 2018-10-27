@@ -41,7 +41,7 @@ class login extends State<Login> {
         backgroundColor: Colors.blueGrey,
         body: new Container(
           child: new Center(
-            child: new RaisedButton(
+            child: new FlatButton(
                 onPressed: () => _gSignin(),
                 color: Colors.grey,
                 child: new Text(
@@ -54,6 +54,12 @@ class login extends State<Login> {
     );
   }
 
+  change(){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => new Qst1(userGlobale)),
+    );
+  }
 
   Future<FirebaseUser> _gSignin() async{
     GoogleSignInAccount googleSignInAccount = await _googleSignIn.signIn();
@@ -67,7 +73,7 @@ class login extends State<Login> {
       firebaseDatabase.reference().child("Users").child(userGlobale.id).set({ "email" : userGlobale.email});
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => new MaterialApp(home: new Qst1(userGlobale))),
+        MaterialPageRoute(builder: (context) => new Qst1(userGlobale)),
       );
     }
     return user;

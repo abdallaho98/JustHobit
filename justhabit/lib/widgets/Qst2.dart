@@ -1,6 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:justhabit/Model/User.dart';
+import 'package:justhabit/widgets/home.dart';
 
 FirebaseDatabase firebaseDatabase = FirebaseDatabase.instance;
 
@@ -21,6 +22,10 @@ class qst2 extends StatelessWidget {
     void chose(String selected){
       firebaseDatabase.reference().child("Users").child(member.id).set({"Topic" : selected ,"hobit" : member.hobit , "email" : member.email});
       member.topic = selected;
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => new home(member)),
+      );
     }
 
     if (member.hobit == "Sport"){op1 = "Football" ; op2 = "NBA" ; op3 = "HandBall" ; op4 = "Tennis";}
@@ -31,39 +36,77 @@ class qst2 extends StatelessWidget {
       appBar: new AppBar(
         title: const Text("JustHobbit"),
       ),
-     backgroundColor: Colors.yellowAccent,
+     backgroundColor: Colors.grey,
       body: new Center(
         child: new Container(
-          decoration: new BoxDecoration(
-            color: Colors.deepOrange,
-                borderRadius: new BorderRadius.all(const  Radius.circular(4.0)),
-          ),
-          width: 250.0,
-          height: 150.0,
-          child: new Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              new Text("Chose your prefered:"),
-              new Padding(padding: EdgeInsets.only(top: 18.0)),
-              new Row(
-                children: <Widget>[
-                  new Padding(padding: EdgeInsets.only(left: 20.0)),
-                  new RaisedButton(onPressed: () => chose(op1) , color: Colors.blueGrey, child: new Text(op1),),
-                  new Padding(padding: EdgeInsets.only(left: 30.0)),
-                  new RaisedButton(onPressed: () => chose(op2)  , color: Colors.blueGrey, child: new Text(op2),),
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  new Padding(padding: EdgeInsets.only(left: 20.0)),
-                  new RaisedButton(onPressed: () => chose(op3)  , color: Colors.blueGrey, child: new Text(op3),),
-                  new Padding(padding: EdgeInsets.only(left: 30.0)),
-                  new RaisedButton(onPressed: () => chose(op4)  , color: Colors.blueGrey, child: new Text(op4),),
-                ],
-              ),
+          child: new Padding(padding: EdgeInsets.only(left: 24.0,right: 24.0 ,) ,
+            child:new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                new Text("Chose a ${member.hobit} that you prefered the most:" , style: new TextStyle(color: Colors.white , fontSize: 21.0,) ,textAlign: TextAlign.center,),
 
-          ],
-        ),
+                new Padding(padding: EdgeInsets.only(top: 24.0)),
+
+                new RaisedButton(onPressed: () => chose(op1) ,
+                    elevation: 10.0,
+                    shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)),
+                    color: const Color(0xFFe79124),
+                    padding: EdgeInsets.only(top: 16.0,bottom: 16.0),
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        new Text(op1 , style: new TextStyle(fontSize: 18.0 ,fontFamily: "Palatino",color: Colors.white), ),
+                      ],
+                    )
+                ),
+
+                new Padding(padding: EdgeInsets.only(top: 24.0)),
+
+                new RaisedButton(onPressed: () => chose(op3) ,
+                    elevation: 10.0,
+                    shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)),
+                    color: const Color(0xFFed1f24),
+                    padding: EdgeInsets.only(top: 16.0,bottom: 16.0),
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        new Text(op3 , style: new TextStyle(fontSize: 18.0 ,fontFamily: "Palatino",color: Colors.white), ),
+                      ],
+                    )
+                ),
+
+                new Padding(padding: EdgeInsets.only(top: 24.0)),
+
+                new RaisedButton(onPressed: () => chose(op4) ,
+                    elevation: 10.0,
+                    shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)),
+                    color: const Color(0xFF4348a5),
+                    padding: EdgeInsets.only(top: 16.0,bottom: 16.0),
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        new Text(op4 , style: new TextStyle(fontSize: 18.0 ,fontFamily: "Palatino",color: Colors.white), ),
+                      ],
+                    )
+                ),
+
+                new Padding(padding: EdgeInsets.only(top: 24.0)),
+
+                new RaisedButton(onPressed: () => chose(op2) ,
+                    elevation: 10.0,
+                    shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)),
+                    color: const Color(0xFFdce11f),
+                    padding: EdgeInsets.only(top: 16.0,bottom: 16.0),
+                    child: new Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        new Text(op2 , style: new TextStyle(fontSize: 18.0 ,fontFamily: "Palatino",color: Colors.white), ),
+                      ],
+                    )
+                ),
+              ],
+            ),
+          )
       ),
       ),
     );
