@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:justhabit/Model/User.dart';
 import 'package:justhabit/widgets/home/MyActivities.dart';
+import 'package:justhabit/widgets/home/Myidole.dart';
 import 'package:justhabit/widgets/home/Search.dart';
 
 
@@ -19,7 +20,7 @@ class home extends StatelessWidget{
         title: new Text("Home" , textDirection: TextDirection.ltr,),
         bottom: new TabBar(tabs: <Tab>[
           new Tab(icon: new Icon(Icons.account_circle)),
-          new Tab(icon: new Icon(Icons.grade)),
+          new Tab(icon: new Icon(Icons.view_agenda)),
           new Tab(icon: new Icon(Icons.search)),
           new Tab(icon: new Icon(Icons.access_time)),
         ],
@@ -27,7 +28,7 @@ class home extends StatelessWidget{
       ),
       body: new TabBarView( children: [
         new MyActivities(member),
-        Icon(Icons.directions_transit),
+        new Myidole(member),
         new Search(member),
         Icon(Icons.directions_bike),
       ],),

@@ -46,7 +46,7 @@ class qst2 extends StatelessWidget {
             child:new Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                new Text("Chose a ${member.hobit} that you prefered the most:" , style: new TextStyle(color: Colors.white , fontSize: 21.0,) ,textAlign: TextAlign.center,),
+                new Text("Chose a ${member.hobit} that you prefered the most:" , style: new TextStyle(color: Colors.black , fontSize: 21.0,) ,textAlign: TextAlign.center,),
 
                 new Padding(padding: EdgeInsets.only(top: 24.0)),
 
@@ -98,7 +98,7 @@ class qst2 extends StatelessWidget {
                 new RaisedButton(onPressed: () => chose(op2) ,
                     elevation: 10.0,
                     shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(20.0)),
-                    color: const Color(0xFFed1f24),
+                    color: const Color(0xFFd7402F),
                     padding: EdgeInsets.only(top: 16.0,bottom: 16.0),
                     child: new Row(
                       mainAxisAlignment: MainAxisAlignment.center,

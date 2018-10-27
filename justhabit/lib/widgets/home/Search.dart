@@ -69,7 +69,8 @@ class search extends State<Search> {
                     ),
                     onTap:() => chose(_user,list[index]),
                   ),
-                );}
+                );
+                }
               },
             ))
     );

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:justhabit/Model/Activitie.dart';
 import 'package:justhabit/Model/User.dart';
+
+
 
 class MyActivities extends StatefulWidget{
   User _user;
@@ -14,14 +17,16 @@ class MyActivities extends StatefulWidget{
 class myActivities extends State<MyActivities> {
   User _user;
   myActivities(this._user);
+
+
   @override
   Widget build(BuildContext context) {
     return new Container(
       child: new Column(
         children: <Widget>[
-          
+
           new Padding(padding: EdgeInsets.only(top: 10.0)),
-          
+
           new Container(
               decoration: new BoxDecoration(
                 borderRadius: BorderRadius.circular(15.0),
@@ -77,4 +82,6 @@ class myActivities extends State<MyActivities> {
       ),
     );
   }
+
+
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:justhabit/Model/Activitie.dart';
 import 'package:justhabit/Model/Idole.dart';
 import 'package:justhabit/Model/User.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -31,10 +32,15 @@ class profile extends State<Profile> {
       if(_isFavorised){_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Five-pointed_star.svg/255px-Five-pointed_star.svg.png";
       _isFavorised = false;
       firebaseDatabase.reference().child("Users").child(_user.id).child("interest").set({});
+      firebaseDatabase.reference().child("Users").child(_user.id).child("Todo").set({});
       }
       else{
         _url = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Gold_Star.svg/1024px-Gold_Star.svg.png" ; _isFavorised = true;
         firebaseDatabase.reference().child("Users").child(_user.id).child("interest").set({"Name" : _idole.fullName});
+        for(Activitie act in _idole.activities){
+          firebaseDatabase.reference().child("Users").child(_user.id).child("Todo").push().set(
+              {"Desc" : act.description , "start" : act.start , "end" : act.end});
+        }
       }
     });
   }
