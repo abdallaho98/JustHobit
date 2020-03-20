@@ -1,3 +1,3 @@
 # justhabit
 
-A new Flutter application.
+Digital Wellbeing Application
